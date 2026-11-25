@@ -15,7 +15,7 @@ It is laid out to feel like GNOME: floating windows by default, tiling per works
 - **Overview** (tap Super) with live workspaces and app search, **Alt+Tab** switcher, app grid
 - **Settings** window: appearance, fonts, displays, windows, sound, keyboard & mouse, shortcuts, notifications, power & idle, network, default apps, date & time
 - **Lock screen** with PAM, keyboard layout and Caps Lock hints, and a now-playing card with the current lyric line
-- **Music** player for your Music folder: library, queue, search, shuffle and repeat, synced lyrics from [LRCLIB](https://lrclib.net) (or a `.lrc` file next to the song), a mini player when the window floats, and a drop-down mini player from the bar's song pill
+- **Music** player for your Music folder: library, queue, search, shuffle and repeat, synced lyrics from [LRCLIB](https://lrclib.net) (or a `.lrc` file next to the song), a mini player when the window floats, and a drop-down mini player from the bar's song pill; audio files opened from the file manager play in it too
 - Polkit agent, clipboard history, screenshots, screen recording, USB drive mounting and eject, idle lock and suspend, OSD for volume and brightness
 
 **Hyprland** (`.config/hypr`): Lua config split into colours, window behaviour, input and monitors (the last three are rewritten by the Settings app), GNOME-like floating/tiling logic, hyprbars title bars, and a small plugin (`plugins/shell-bridge`) that sends apps' minimise and window-menu requests to the shell.

@@ -13,7 +13,7 @@ import Quickshell.Wayland
 // the quick settings media card and answers media keys through mpv-mpris.
 // While Hyprland floats the window it turns into a small mini player. The bar's
 // song pill drops the same mini player down under the bar (like quick settings).
-//   qs ipc call music open | toggle | lyrics | mini | drop | playPause | next | previous
+//   qs ipc call music open | toggle | lyrics | mini | drop | playFiles <paths, one per line> | playPause | next | previous
 FloatingWindow {
     id: win
     visible: false
@@ -156,7 +156,15 @@ FloatingWindow {
     property bool muted: false
     property var playlist: []         // [{ filename, current }]
     property var pending: []          // commands waiting for the socket
-    readonly property var current: path ? (byPath[path] || ({ path: path, title: path.split("/").pop(), artist: "", album: "", art: "", duration: 0 })) : null
+    readonly property var current: path ? (byPath[path] || outsideTrack(path)) : null
+    // a file opened from outside the library: "Artist - Title.mp3" → artist + title
+    function outsideTrack(p) {
+        const stem = p.split("/").pop().replace(/\.[^.]+$/, "");
+        const i = stem.indexOf(" - ");
+        const left = i > 0 ? stem.slice(0, i).trim() : "";
+        const num = /^\d+$/.test(left);
+        return { path: p, title: i > 0 && !num ? stem.slice(i + 3).trim() : stem, artist: i > 0 && !num ? left : "", album: "", art: "", duration: 0 };
+    }
     readonly property bool playing: !idle && !paused && path !== ""
     readonly property int queueIndex: { for (let i = 0; i < playlist.length; i++) if (playlist[i].current) return i; return -1; }
 
@@ -306,6 +314,22 @@ FloatingWindow {
         cmd(["playlist-play-index", Math.max(0, start)]);
         cmd(["set_property", "pause", false]);
     }
+    // Files opened from a file manager (scripts/music-open.sh). One song from the
+    // library plays with the library as its queue; anything else becomes the queue.
+    function playFiles(paths) {
+        paths = paths.filter(p => p);
+        if (!paths.length) return;
+        if (paths.length === 1 && byPath[paths[0]]) {
+            query = "";
+            playFrom(byPath[paths[0]]);
+        } else {
+            cmd(["stop"]);
+            for (const p of paths) cmd(["loadfile", p, "append"]);
+            cmd(["playlist-play-index", 0]);
+            cmd(["set_property", "pause", false]);
+        }
+        if (!visible && !drop.open) drop.show();
+    }
     function playNext(t) { cmd(["loadfile", t.path, idle ? "append-play" : "insert-next"]); }
     function playPause() {
         if (idle || !path) { if (shown.length) playFrom(Config.musicShuffle ? shown[Math.floor(Math.random() * shown.length)] : shown[0]); }
@@ -338,6 +362,7 @@ FloatingWindow {
         function lyrics(): void { win.open(); win.tab = 2; }
         function mini(): void { win.goMini(); }
         function drop(): void { win.toggleDrop(); }
+        function playFiles(paths: string): void { win.playFiles(paths.split("\n")); }
         function playPause(): void { if (!win.tracks.length) scan.running = true; win.playPause(); }
         function next(): void { win.next(); }
         function previous(): void { win.previous(); }

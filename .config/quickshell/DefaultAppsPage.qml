@@ -18,7 +18,7 @@ ColumnLayout {
         { key: "text",     label: "Text editor",  icon: "description", mimes: ["text/plain", "text/markdown", "application/x-shellscript"] },
         { key: "images",   label: "Images",       icon: "image",       mimes: ["image/png", "image/jpeg", "image/gif", "image/webp", "image/bmp", "image/tiff", "image/svg+xml", "image/avif"] },
         { key: "video",    label: "Video",        icon: "movie",       mimes: ["video/x-matroska", "video/mp4", "video/webm", "video/quicktime", "video/x-msvideo", "video/mpeg", "video/x-flv"] },
-        { key: "music",    label: "Music",        icon: "music_note",  mimes: ["audio/mpeg", "audio/flac", "audio/ogg", "audio/x-vorbis+ogg", "audio/opus", "audio/mp4", "audio/x-wav"] },
+        { key: "music",    label: "Music",        icon: "music_note",  mimes: ["audio/mpeg", "audio/flac", "audio/ogg", "audio/x-vorbis+ogg", "audio/opus", "audio/mp4", "audio/x-m4a", "audio/aac", "audio/x-wav"] },
         { key: "pdf",      label: "PDF",          icon: "picture_as_pdf", mimes: ["application/pdf"] },
         { key: "archive",  label: "Archives",     icon: "folder_zip",  mimes: ["application/zip", "application/x-tar", "application/x-compressed-tar", "application/x-7z-compressed", "application/vnd.rar", "application/x-xz-compressed-tar"] }
     ]
