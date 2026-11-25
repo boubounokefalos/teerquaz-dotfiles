@@ -1,0 +1,17 @@
+/* Window titles in GTK3 header bars look like the desktop's
+   shared title bars (hyprbars, ~/.config/hypr/titlebars.lua) and the bar's
+   clock: Comfortaa bold 14px, light fg1. */
+headerbar .title,
+headerbar label.title,
+windowtitle .title,
+.titlebar .title {
+    font-family: "Comfortaa";
+    font-weight: bold;
+    font-size: 14px;
+    color: #dce4e8;
+}
+headerbar .subtitle,
+windowtitle .subtitle {
+    font-family: "Nunito";
+    color: #8b9aa2;
+}

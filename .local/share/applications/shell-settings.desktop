@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Shell Settings
+Comment=Wallpaper, themes, cursor and fonts
+Icon=preferences-desktop-theme
+Exec=qs ipc call settings open
+Categories=Settings;DesktopSettings;
+OnlyShowIn=Hyprland;

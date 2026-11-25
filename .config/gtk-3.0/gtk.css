@@ -1,0 +1,4 @@
+/* Per-app styles (the GNOME accent-colour extension import was removed with GNOME). */
+@import url("menus.css");
+@import url("thunar.css");
+@import url("titlebars.css");

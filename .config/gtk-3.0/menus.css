@@ -1,0 +1,75 @@
+/* Right-click / context menus for every GTK3 app, matching the shell's
+   Settings dropdowns (~/.config/quickshell/Dropdown.qml): rounded dark panel,
+   Nunito, yellow rounded highlight. Teerquaz colours as in Theme.qml. */
+
+/* the popup window itself: transparent so the rounded panel shows */
+window.popup,
+window.popup.background {
+    background-color: transparent;
+}
+window.popup decoration,
+.csd.popup decoration {
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 0 1px #2f383e;
+}
+
+menu,
+.menu,
+.context-menu {
+    background-color: #1e2327;
+    color: #dce4e8;
+    border-radius: 16px;
+    border: none;
+    padding: 6px;
+    font-family: "Nunito";
+    font-size: 11pt;
+}
+
+menu menuitem,
+.menu menuitem,
+.context-menu menuitem {
+    min-height: 30px;
+    padding: 4px 12px;
+    border-radius: 10px;
+    color: #dce4e8;
+    background: none;
+}
+menu menuitem:hover,
+.menu menuitem:hover,
+.context-menu menuitem:hover {
+    background-color: #2ec4b6;
+    color: #181c1f;
+}
+menu menuitem:hover accelerator,
+.context-menu menuitem:hover accelerator,
+menu menuitem:hover arrow {
+    color: rgba(24, 28, 31, 0.7);
+}
+menu menuitem:disabled,
+.context-menu menuitem:disabled {
+    color: #3e4a51;
+}
+menu menuitem accelerator,
+.context-menu menuitem accelerator {
+    color: #8b9aa2;
+    margin-left: 24px;
+}
+menu separator,
+.context-menu separator {
+    background-color: #2f383e;
+    min-height: 1px;
+    margin: 6px 8px;
+}
+menu menuitem check,
+menu menuitem radio {
+    margin-right: 8px;
+}
+menu menuitem image,
+.context-menu menuitem image {
+    color: inherit;
+}
+/* scroll arrows on very long menus */
+menu > arrow {
+    background-color: #1e2327;
+    border: none;
+}

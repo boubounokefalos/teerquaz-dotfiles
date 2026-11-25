@@ -1,0 +1,52 @@
+# Ghostty — slate turquoise, matching the shell (~/.config/quickshell/Theme.qml)
+
+font-family = Maple Mono NF
+font-size = 12
+font-feature = calt
+font-feature = liga
+
+# Slate turquoise (terminal palette; magenta kept lavender, not green; the shell roles are in ~/.config/hypr/colors.lua)
+background = #181c1f
+foreground = #dce4e8
+cursor-color = #2ec4b6
+cursor-text = #181c1f
+selection-background = #242b30
+selection-foreground = #dce4e8
+palette = 0=#181c1f
+palette = 1=#e76f51
+palette = 2=#38b000
+palette = 3=#e9c46a
+palette = 4=#1b8a84
+palette = 5=#a79bc4
+palette = 6=#2ec4b6
+palette = 7=#b8c4ca
+palette = 8=#5c6a72
+palette = 9=#f4845f
+palette = 10=#55a630
+palette = 11=#f4d35e
+palette = 12=#2a9d8f
+palette = 13=#bfb5d6
+palette = 14=#64dfdf
+palette = 15=#dce4e8
+
+cursor-style = bar
+cursor-style-blink = true
+window-padding-x = 12
+window-padding-y = 10
+window-padding-balance = true
+window-theme = ghostty
+# draw our own GTK title bar (tabs, close button): Hyprland draws none
+window-decoration = client
+gtk-titlebar = true
+gtk-tabs-location = top
+confirm-close-surface = false
+copy-on-select = clipboard
+mouse-hide-while-typing = true
+shell-integration-features = cursor,sudo,title
+
+# open new windows/tabs in the current directory
+window-inherit-working-directory = true
+
+# keys (Ctrl+Shift+T new tab, Ctrl+Shift+E/O split right/down are defaults)
+keybind = ctrl+shift+e=new_split:right
+keybind = ctrl+shift+o=new_split:down

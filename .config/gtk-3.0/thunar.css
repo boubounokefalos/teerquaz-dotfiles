@@ -1,0 +1,99 @@
+/* Thunar styled like the shell's Settings window (~/.config/quickshell/Settings.qml):
+   darker sidebar with rounded yellow selection, Nunito, flat rounded controls.
+   Colours: Teerquaz, same as ~/.config/quickshell/Theme.qml. */
+
+window.thunar {
+    font-family: "Nunito";
+    font-size: 11pt;
+    background-color: #181c1f;
+}
+
+/* ---------- sidebar ---------- */
+window.thunar .shortcuts-pane,
+window.thunar .shortcuts-pane treeview,
+window.thunar .sidebar,
+window.thunar .sidebar treeview {
+    background-color: #1e2327;
+    color: #dce4e8;
+}
+window.thunar .shortcuts-pane treeview,
+window.thunar .sidebar treeview {
+    font-weight: bold;
+    -GtkTreeView-vertical-separator: 10px;
+    -GtkTreeView-horizontal-separator: 10px;
+}
+/* inset the rows so the selection pill floats like in Settings */
+window.thunar .shortcuts-pane,
+window.thunar .sidebar {
+    padding: 6px 12px;
+}
+window.thunar .shortcuts-pane treeview:hover,
+window.thunar .sidebar treeview:hover {
+    background-color: #242b30;
+    border-radius: 12px;
+}
+window.thunar .shortcuts-pane treeview:selected,
+window.thunar .sidebar treeview:selected {
+    background-color: #2ec4b6;
+    color: #181c1f;
+    border-radius: 12px;
+}
+window.thunar paned > separator {
+    background-color: #1e2327;
+    min-width: 1px;
+}
+
+/* ---------- toolbar / location ---------- */
+window.thunar toolbar {
+    background-color: #181c1f;
+    border: none;
+    padding: 6px 10px;
+}
+window.thunar toolbar button {
+    border: none;
+    border-radius: 12px;
+    background: none;
+    box-shadow: none;
+    min-height: 32px;
+    min-width: 32px;
+}
+window.thunar toolbar button:hover { background-color: #242b30; }
+window.thunar toolbar entry {
+    border: none;
+    border-radius: 12px;
+    background-color: #242b30;
+    color: #dce4e8;
+    min-height: 34px;
+    padding: 0 12px;
+    box-shadow: none;
+}
+window.thunar toolbar entry:focus { box-shadow: inset 0 0 0 2px #2ec4b6; }
+window.thunar .path-bar-button {
+    border-radius: 12px;
+    font-weight: bold;
+}
+window.thunar .path-bar-button:checked {
+    background-color: #2f383e;
+}
+
+/* ---------- file view ---------- */
+window.thunar .standard-view,
+window.thunar .standard-view iconview,
+window.thunar .standard-view treeview {
+    background-color: #181c1f;
+    color: #dce4e8;
+}
+window.thunar .standard-view iconview:selected,
+window.thunar .standard-view treeview:selected {
+    background-color: rgba(46, 196, 182, 0.30);
+    color: #f0f4f6;
+    border-radius: 12px;
+}
+
+/* ---------- status bar ---------- */
+window.thunar statusbar,
+window.thunar .statusbar-text {
+    color: #8b9aa2;
+    font-size: 10pt;
+    padding: 2px 8px;
+}

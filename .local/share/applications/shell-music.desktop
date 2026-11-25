@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Music
+Comment=Play the songs in your Music folder
+Icon=multimedia-audio-player
+Exec=qs ipc call music open
+Categories=AudioVideo;Audio;Player;
+Keywords=mpv;songs;player;
+OnlyShowIn=Hyprland;

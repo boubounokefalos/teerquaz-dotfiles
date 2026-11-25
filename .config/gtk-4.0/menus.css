@@ -1,0 +1,40 @@
+/* Right-click / popover menus for GTK4 and libadwaita apps, matching the GTK3
+   menus (~/.config/gtk-3.0/menus.css) and the shell's Settings dropdowns. */
+
+popover.menu > contents,
+popover.menu > arrow {
+    background-color: #1e2327;
+    color: #dce4e8;
+}
+popover.menu > contents {
+    border-radius: 16px;
+    padding: 6px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 0 1px #2f383e;
+    font-family: "Nunito";
+    font-size: 11pt;
+}
+popover.menu modelbutton {
+    min-height: 30px;
+    padding: 4px 12px;
+    border-radius: 10px;
+    color: #dce4e8;
+}
+popover.menu modelbutton:hover,
+popover.menu modelbutton:selected {
+    background-color: #2ec4b6;
+    color: #181c1f;
+}
+popover.menu modelbutton:hover accelerator,
+popover.menu modelbutton:hover arrow {
+    color: rgba(24, 28, 31, 0.7);
+}
+popover.menu modelbutton:disabled {
+    color: #3e4a51;
+}
+popover.menu modelbutton accelerator {
+    color: #8b9aa2;
+}
+popover.menu separator {
+    background-color: #2f383e;
+    margin: 6px 8px;
+}

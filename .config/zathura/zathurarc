@@ -1,0 +1,42 @@
+# zathura — Teerquaz (slate turquoise). Ctrl+R toggles dark page colours (recolor).
+set font                    "Nunito 11"
+set selection-clipboard     clipboard
+set adjust-open             "best-fit"
+set pages-per-row           1
+set scroll-page-aware       "true"
+set smooth-scroll           "true"
+set statusbar-h-padding     12
+set statusbar-v-padding     6
+set guioptions              "sv"
+set window-title-basename   "true"
+
+set default-bg              "#181c1f"
+set default-fg              "#dce4e8"
+set statusbar-bg            "#1e2327"
+set statusbar-fg            "#b8c4ca"
+set inputbar-bg             "#181c1f"
+set inputbar-fg             "#f0f4f6"
+set notification-bg         "#1e2327"
+set notification-fg         "#dce4e8"
+set notification-error-bg   "#e76f51"
+set notification-error-fg   "#181c1f"
+set notification-warning-bg "#e9c46a"
+set notification-warning-fg "#181c1f"
+set highlight-color         "rgba(100,223,223,0.45)"
+set highlight-active-color  "rgba(233,196,106,0.55)"
+set completion-bg           "#1e2327"
+set completion-fg           "#dce4e8"
+set completion-group-bg     "#242b30"
+set completion-group-fg     "#8b9aa2"
+set completion-highlight-bg "#2ec4b6"
+set completion-highlight-fg "#181c1f"
+set index-bg                "#181c1f"
+set index-fg                "#dce4e8"
+set index-active-bg         "#2f383e"
+set index-active-fg         "#f0f4f6"
+
+# dark mode for pages (Ctrl+R toggles)
+set recolor                 "false"
+set recolor-lightcolor      "#181c1f"
+set recolor-darkcolor       "#dce4e8"
+set recolor-keephue         "true"
